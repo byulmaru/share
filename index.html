@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Planet Share</title>
+</head>
+<body>
+<h1>Planet Share</h1>
+<p>Planet Share는 서드파티 개발자들을 위한 단일 경로의 마스토돈 / 미스키 공유 기능을 제공하기 위한 간단한 서비스예요.</p>
+<h2>사용 방법</h2>
+<p>사용자를 <code>https://share.planet.moe/share?text=<var>공유할 내용</var></code> 주소로 리다이렉트하거나 팝업을 열어주세요.</p>
+<h2>예시</h2>
+<p><a href="https://share.planet.moe/share?text=" target="_blank" onclick="share()">연합우주로 공유</a></p>
+<h2>기타 정보</h2>
+<p>서비스에 관한 문의는 <a href="https://planet.moe/@planet">@planet@planet.moe</a>로 부탁드려요.</p>
+<script>
+function share() {
+  window.open('https://share.planet.moe/share?text=레니+귀여워!!', '공유', 'width=500,height=400');
+  return false;
+}
+</script>
+</body>
+</html>

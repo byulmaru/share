@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Planet Share</title>
+</head>
+<body>
+<p>
+  사용하시는 서버(인스턴스)의 접속 주소를 입력해 주세요.
+</p>
+<form id="form-share">
+  <label for="input-domain">주소</label>
+  <input type="text" id="input-domain" placeholder="planet.moe" list="list-domain">
+  <datalist id="list-domain">
+    <option value="planet.moe">
+    <option value="madost.one">
+    <option value="twingyeo.kr">
+    <option value="qdon.space">
+    <option value="k.lapy.link">
+    <option value="stella.place">
+    <option value="toot.funami.tech">
+    <option value="kurry.social">
+    <option value="ani.work">
+    <option value="mastodon.mnetwork.co.kr">
+    <option value="renkontu.com">
+    <option value="social.silicon.moe">
+  </datalist>
+  <button type="submit">공유</button>
+</form>
+<script>
+
+
+if (localStorage.getItem('domain')) {
+  document.getElementById('input-domain').value = localStorage.getItem('domain');
+}
+
+document.getElementById('form-share')
+.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const domain = document.getElementById('input-domain').value || 'planet.moe';
+  const text = new URLSearchParams(window.location.search).get('text') || '';
+  localStorage.setItem('domain', domain);
+  location.href = `https://${domain}/share?text=${text}`;
+  return false;
+});
+</script>
+</body>
+</html>
