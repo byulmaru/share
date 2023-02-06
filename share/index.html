@@ -43,7 +43,7 @@ document.getElementById('form-share')
   const domain = document.getElementById('input-domain').value || 'planet.moe';
   const text = new URLSearchParams(window.location.search).get('text') || '';
   localStorage.setItem('domain', domain);
-  location.href = `https://${domain}/share?text=${text}`;
+  location.href = `https://${domain}/share?text=${encodeURIComponent(text)}`;
   return false;
 });
 </script>
